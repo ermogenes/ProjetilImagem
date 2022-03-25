@@ -64,15 +64,18 @@ var pontos = new[] {
 // gfx.DrawCurve(canetaCurvaSpLine, pontos);
 gfx.DrawLines(canetaRetas, pontos);
 
-// Escreve resultados do programa
-Point pontoResultado = new Point(xOrigem + (int)alcance / 2, yOrigem - (int)altura / 2);
-gfx.DrawString($"Velocidade = {velocidade}m/s\nÂngulo = {anguloGraus}°\nAltura = {altura:N2}\nAlcance = {alcance:N2}\nt = 1s, 1px = 1m", SystemFonts.DefaultFont, Brushes.Blue, pontoResultado);
-
-// Desenho da parábola
-
 // Decompõe a velocidades em vertical e horizontal
 double velocidadeX = velocidade * Math.Cos(anguloRadianos);
 double velocidadeY = velocidade * Math.Sin(anguloRadianos);
+
+// Tempo para atingir o ponto mais alto
+double tempoCulminante = velocidadeY / gravidade;
+
+// Escreve resultados do programa
+Point pontoResultado = new Point(xOrigem + (int)alcance / 2, yOrigem - (int)altura / 2);
+gfx.DrawString($"Velocidade = {velocidade:N2}m/s\nÂngulo = {anguloGraus:N2}°\nAltura = {altura:N2} em {tempoCulminante:N2}s\nAlcance = {alcance:N2}\nt = 1s, 1px = 1m", SystemFonts.DefaultFont, Brushes.Blue, pontoResultado);
+
+// Desenho da parábola
 
 // t em s
 // Escala 1px = 1m
