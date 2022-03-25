@@ -68,12 +68,13 @@ gfx.DrawLines(canetaRetas, pontos);
 double velocidadeX = velocidade * Math.Cos(anguloRadianos);
 double velocidadeY = velocidade * Math.Sin(anguloRadianos);
 
-// Tempo para atingir o ponto mais alto
+// Tempo para atingir o ponto mais alto e o chão
 double tempoCulminante = velocidadeY / gravidade;
+double tempoChao = alcance / velocidadeX;
 
 // Escreve resultados do programa
 Point pontoResultado = new Point(xOrigem + (int)alcance / 2, yOrigem - (int)altura / 2);
-gfx.DrawString($"Velocidade = {velocidade:N2}m/s\nÂngulo = {anguloGraus:N2}°\nAltura = {altura:N2} em {tempoCulminante:N2}s\nAlcance = {alcance:N2}\nt = 1s, 1px = 1m", SystemFonts.DefaultFont, Brushes.Blue, pontoResultado);
+gfx.DrawString($"Velocidade = {velocidade:N2}m/s\nÂngulo = {anguloGraus:N2}°\nAltura = {altura:N2} em {tempoCulminante:N2}s\nAlcance = {alcance:N2} em {tempoChao:N2}s\nt = 1s, 1px = 1m", SystemFonts.DefaultFont, Brushes.Blue, pontoResultado);
 
 // Desenho da parábola
 
