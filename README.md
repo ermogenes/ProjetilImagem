@@ -1,5 +1,5 @@
 # ProjetilImagem
-Calcula e renderiza movimento oblíquo
+Calcula e renderiza lançamento oblíquo.
 
 Exemplos:
 
